@@ -1,0 +1,554 @@
+/* ===rickmark start=== */
+// 自定义mark盒子，用来控制offset
+.richMarkWrap{
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+}
+.richMark{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+// 水滴形状mark
+.dripMark{
+    @extend .richMark;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+.dripMark_css{//纯css绘制
+    width: 30px;
+    height: 30px;
+    border-radius: 60% 0 55% 50% / 55% 0 60% 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+    background: #00A0E9;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+    .txt{
+        line-height: 30px;
+        transform:rotate(225deg);
+    }
+    //排行
+    &.no1{ background: #F0BB52;}
+    &.no2{ background: #A2B0BC;}
+    &.no3{ background: #F2753A;}
+    &:hover,&.hl{//高亮
+        border: 2px solid white;
+    }
+}
+.markText {
+    position: absolute;
+    width: 140px;
+    left:50%;
+    margin-left: -70px;
+    text-align: center;
+    top: 25px;
+    height: auto;
+    &.change {
+        color: #C81428;
+    }
+    &.no1Text {
+        color: #308EEE;
+    }
+    &.no2 {
+        color: #898989;
+    }
+    // display: none;
+    &.isMarkerText {
+        display: inline-block;
+    }
+}
+.dripMark_img{//背景图
+
+    width: 32px;
+    height: 38px;
+    background-image: url('../imgs/maps/putong.png');
+    background-size: cover;
+    &:hover {
+        z-index:9999;
+    }
+    &.mini{
+        width: 12px;
+        height: 14px;
+    }
+    &.small{
+        width: 16px;
+        height: 20px;
+    }
+    &.bigger{
+        width: 20px;
+        height: 24px;
+    }
+    &.maxbigger{
+        width: 22px;
+        height: 26px;
+    }
+    .txt{
+        line-height: 37px;
+    }
+    //首页未成交的
+    &.change{ background-image: url('../imgs/maps/fangqi.png');}
+   
+    //排行
+    &.no1{ background-image: url('../imgs/maps/no1.png');}
+    &.no2{ background-image: url('../imgs/maps/no2.png');}
+    &.no3{ background-image: url('../imgs/maps/no3.png');}
+    // 土地类型
+    &.hot{ background-image: url('../imgs/maps/renqi.png');}//人气盘
+    &.model{ background-image: url('../imgs/maps/biaogan.png');}//标杆盘
+    &.big{ background-image: url('../imgs/maps/dapan.png');}//大盘
+    // 楼盘类型
+    &.house{ background-image: url('../imgs/maps/chunzhuzhai.png');}//纯住宅
+    &.businessHouse{ background-image: url('../imgs/maps/shangzhu.png');}//商住
+    &.businessOffice{ background-image: url('../imgs/maps/shangban.png');}//商办
+    &.complex{ background-image: url('../imgs/maps/zonghe.png');}//综合
+    // 周边配套
+    &.jiaoyu{ background-image: url('../imgs/maps/jiaoyu.png');}//教育
+    &.shangye{ background-image: url('../imgs/maps/shangye.png');}//商业
+    &.yiliao{ background-image: url('../imgs/maps/yiliao.png');}//医疗
+    &.xiuxian{ background-image: url('../imgs/maps/xiuxian.png');}//休闲/景点
+
+    &:hover,&.hl{//高亮
+        background-image: url('../imgs/maps/putong_h.png');
+        &.blue{ background-image: url('../imgs/maps/putong_h.png');}
+        &.no1{ background-image: url('../imgs/maps/no1_h.png');}
+        &.no2{ background-image: url('../imgs/maps/no2_h.png');}
+        &.no3{ background-image: url('../imgs/maps/no3_h.png');}
+        &.hot{ background-image: url('../imgs/maps/renqi_h.png');}//人气盘
+        &.model{ background-image: url('../imgs/maps/biaogan_h.png');}//标杆盘
+        &.big{ background-image: url('../imgs/maps/dapan_h.png');}//大盘
+        &.red{ background-image: url('../imgs/maps/fangqi_h.png');}//在售
+        &.house{ background-image: url('../imgs/maps/chunzhuzhai_h.png');}//纯住宅
+        &.businessHouse{ background-image: url('../imgs/maps/shangzhu_h.png');}//商住
+        &.businessOffice{ background-image: url('../imgs/maps/shangban_h.png');}//商办
+        &.complex{ background-image: url('../imgs/maps/zonghe_h.png');}//综合
+        &.jiaoyu{ background-image: url('../imgs/maps/jiaoyu_h.png');}//教育
+        &.shangye{ background-image: url('../imgs/maps/shangye_h.png');}//商业
+        &.yiliao{ background-image: url('../imgs/maps/yiliao_h.png');}//医疗
+        &.xiuxian{ background-image: url('../imgs/maps/xiuxian_h.png');}//休闲/景点
+        &.change{ background-image: url('../imgs/maps/fangqi_h.png');}
+    }
+    &:hover{//鼠标滑过变大
+        &.mini{
+            @extend .bigger;
+        }
+    }
+}
+
+// 圆形mark
+.circleMark{
+    @extend .richMark;
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    box-sizing: border-box;
+    border: 1px solid #2DA8FA;
+    background: rgba(45, 168, 250, 0.5);
+    color: white;
+    .content{
+        width: 100%;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+//水滴文字mark
+.drip_txtMark{
+    @extend .richMark;
+    text-align: center;
+    .txt{
+        white-space: nowrap;
+    }
+    i{
+        font-size: 26px !important;
+        line-height: 1;
+    }
+    &.blue{ color:#308EEE;}
+    &.red{ color:#C81428;}
+}
+
+
+/* ===rickmark end=== */
+
+/* ===拖拽面板样式start=== */
+.u-maptipbox {
+    width: 342px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: fixed;
+    top: 390px;
+    left: 430px;
+    border: 1px solid rgba(204, 213, 230, 1);
+    box-shadow: 0px 0px 8px 0px rgba(36, 47, 59, 0.08);
+    &.center-maptipbox {
+        background: 0;
+        border:0;
+        position: absolute;
+        top: -112px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* line */
+    .u-panelinea {
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        background: #fff;
+        margin-left: -1px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    .u-panelineb {
+        position: absolute;
+        background: #fff;
+        height: 2px;
+        margin-top: -3px;
+        margin-right: 1px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    /* 内容部分 */ 
+    .mapPanel {
+        width: 100%;
+        // height: 270px;
+        background: white;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        position: relative;
+        .listDetail{
+            background: #F6F6F6;
+            border-bottom: 1px solid rgba(223, 228, 231, 1);
+        }
+        //tool
+        .btns {
+            width: 100%;
+            height: 48px;
+            bottom: 0;
+            overflow: hidden;
+            text-align: center;
+            box-sizing: border-box;
+    
+            button {
+                width: 104px;
+                height: 30px;
+                background: rgba(65, 122, 169, 1);
+                border-radius: 4px;
+                margin: 3px;
+                line-height: 30px;
+                color: #fff;
+                text-align: center;
+                &.btn_analyze {
+                    background: #509CEE;
+                }
+                &.btn_violet {
+                    background: #6F86DA;
+                }
+    
+                &:hover {
+                    opacity: .8;
+                }
+            }
+    
+        }
+    }
+
+    .u-closepanel{
+            position: absolute;
+            right: -8px!important;
+            top: -8px!important;
+            cursor: pointer;
+            background: #D3001E;
+            display: inline-block;
+            padding: 2px;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 12px;
+            font-size: 12p;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            line-height: 16px;
+            display: none;
+            position: absolute;
+            cursor: pointer;
+            z-index: 1115;
+       }
+}
+
+
+.u-maptipbox:hover{
+    .u-closepanel{
+        display: inline-block;
+        transition: transform 1s;
+        transform: rotate(0deg);
+        z-index: 1115;
+        &:hover{
+            transform: rotate(360deg);
+        }
+    }
+}
+  
+/* ===拖拽面板样式end===  */
+
+
+/**  地图政策 **/
+.jw-title {
+    padding: 13px;
+    background:rgba(255,255,255,1);
+    .jw-names {
+    font-size:18px;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    display: inline-block;
+    vertical-align: middle;
+    }
+    .jw-status {
+        width:46px;
+        height:24px;
+        border-radius:4px;
+        font-size:12px;
+        display: inline-block;
+        text-align: center;
+        line-height: 24px;
+        margin-left: 5px;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+    }
+}
+.map-policy {
+  width:100%;
+  background:rgba(255,255,255,1);
+  border-radius:4px;
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+  
+  .jw-charts {
+    width:100%;
+    height:213px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .jw-news {
+    width:100%;
+    background:rgba(240,244,246,1);
+    box-sizing: border-box;
+    font-size:14px;
+    padding: 20px 10px;
+    border-radius: 5px;
+  }
+}
+
+/**** 地图保存按钮 ****/
+.mapsave--btn {
+    position: relative;
+    width:104px;
+    height:31px;
+    background-color: $color_grayblue;
+    color: $color_white;
+    text-align: center;
+    line-height: 31px;
+    border-radius:16px;
+    font-size:12px;
+    cursor: pointer;
+
+    .iconfont{
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    &.position--normal{
+        position: absolute;
+        right: 450px;
+        top: 15px;
+    }
+}
+
+.text--mapblock {
+    display: block;
+    white-space: nowrap;
+    font-size:12px;
+    color: $color_white;
+    transform: translateX(-50%) translateX(-50%);
+    .name,.value{
+        display: block;
+        text-align: center;
+        line-height:20px;
+    }
+}
+
+
+// 背景色汇总
+//排行
+.bc_no1{ background-color: #F0BB52;}
+.bc_no2{ background-color: #A2B0BC;}
+.bc_no3{ background-color: #F2753A;}
+// 土地类型
+.bc_normal{ background-color: #2F95C3;}//普通盘
+.bc_hot{ background-color: #EF9A9A;}//人气盘
+.bc_model{ background-color: #D0AF4C;}//标杆盘
+.bc_big{ background-color: #B94047;}//大盘
+// 楼盘类型
+.bc_house{ background-color: #E57373;}//纯住宅
+.bc_businessHouse{ background-color: #FFAB40;}//商住
+.bc_businessOffice{ background-color: #7986CB;}//商办
+.bc_complex{ background-color: #AFB42B;}//综合
+
+
+//圆柱体mark
+._maptip_barChart_box{
+    width: max-content;
+    position: relative;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color:#83BEFF;
+    // margin:100px;
+    //信息展示框
+    .barchart_info_box{
+        width: 30px;
+        position: relative;
+        .map_barchart_tip{
+            //display: none;
+            position: absolute;
+            bottom: 10px;
+            height: 40px;
+            padding: 0px 19px;
+            font-size: 16px;
+            color: #333333;
+            white-space: nowrap;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+            border-radius:4px;
+            span{
+                font-size: 10px;
+            }
+            &::before{
+                position: absolute;
+                content: '';
+                bottom: -4px;
+                left:50%;
+                width:0;
+                height:0;
+                border-width:4px 8px 0;
+                border-style:solid;
+                transform: translateX(-50%);
+                border-color:#fff transparent transparent;
+            }
+        }
+    }
+    //圆柱
+    ._data_bar{
+        position: relative;
+        width:20px;
+        min-height:20px;
+        background: #639AD6;
+        border-radius: 0 0 8px 8px;
+        //=transform: rotateX(70deg);//漏出底部
+        
+        &::before{
+            content:'';
+            display:inline-block;
+            width:20px;
+            height: 20px;
+            position:relative;
+            background: #83BEFF;
+            top:-10px;
+            left:0px;
+            border-radius: 50px;
+            transform: rotateX(70deg);//覆盖头部圆角
+        }
+    }
+}
+
+@keyframes centerScale{
+    from {width:35px;height:35px}
+    to {width:30px;height:30px;}
+}
+
+@keyframes centerOpacity{
+    from {opacity: 0.5;}
+    to {opacity:1}
+}
+
+
+//红色中心点
+.redCenter{
+    width:30px;
+    height:30px;
+    position: absolute;
+    display: block;
+    background:rgba(229,0,32,0.4);
+    border-radius: 30px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation:centerOpacity 1.2s infinite;
+
+
+    &::before{
+        content:'';
+        display: block;
+        width:16px;
+        height:16px;
+        background:rgba(229,0,32,1);
+        border-radius:50%;
+
+        
+    }
+
+}
+
+.textPointCon{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    span{
+        white-space: nowrap;
+        color:#00A0E9;
+        display: inline-block;
+        margin-top:5px;
+    }
+}
+
+
+//蓝色中心点
+.blueCenter{
+    width:20px;
+    height:20px;
+    margin:0 auto;
+    display: block;
+    background:rgba(0,160,233,0.4);
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation:centerOpacity 1.2s infinite;
+
+
+    &::before{
+        content:'';
+        display: block;
+        width:10px;
+        height:10px;
+        background:rgba(0,160,233,0.8);
+        border-radius:50%;
+
+        
+    }
+
+}

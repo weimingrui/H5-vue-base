@@ -1,0 +1,540 @@
+/*
+    文件的样式主要是页面的main content 的可复用样式
+
+*/ 
+.page{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+// =====顶部菜单样式 start ====>>
+.main_page_menu_container{
+    width: 100%;
+    position: relative;
+    height: 82px;
+    background-image: url('../imgs/menu/topmenu-bg.png');
+    background-clip: border-box;
+    background-size: cover;
+    box-sizing: border-box;
+
+}
+// =====顶部菜单样式 end ====<<
+
+// ===== 页面主要内容样式 start ====>>
+// 包含 地图 右侧边栏
+.main_content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex: 1;
+    background-color: #202933;
+}
+.mapBox{
+    position: absolute;
+    //width: 100%;
+    height: 100%;
+    left:0;
+    right:0px;
+}
+.rightPanelBox{
+    position: absolute;
+    height: calc(100% - 30px);
+    right: 0px;
+    width: 424px;
+    padding: 15px;
+    margin: 14px 0px 17px 0px;
+    width: 256px;
+    background-color: rgba(19, 28, 38, 0.8);
+    box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    border-radius:4px 0px 4px 4px;
+}
+// ===== 页面主要内容样式 end ====<<
+// 按钮背景
+.g_btn_bg{
+    background-image:url('../imgs/menu/btn-bg.png');
+    background-clip: border-box;
+    background-size: cover;
+}
+.bg_white{
+    background-color:#fff; 
+}
+._inline_icon{
+    display: inline-block;
+    background-clip:border-box;
+    background-size: cover;
+}
+.default_bg{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.filter_month{
+    margin-left: 6px;
+    width: 194px;
+    .el-input__inner{
+        background:rgba(16,25,35,1);
+        border:2px solid rgba(255,255,255,0.0588235);
+        border-radius:20px 20px 20px 20px;
+        color: #fff;
+    }
+    .el-date-editor.el-input, .el-date-editor.el-input__inner{
+        width: 100%;
+    }
+}
+//链接文字
+.is_link{
+    color:#00A0E9;
+    cursor: pointer;
+}
+// 预警图标
+.icon-warningIcon-:before { content: "\e652"; }
+
+.icon-warningIcon-1:before { content: "\e653"; }
+
+.icon-warningIcon-2:before { content: "\e654"; }
+@mixin icon_size($size:20px) {
+    width: $size;
+    height: $size;
+    background-clip: content-box;
+    background-size: cover;
+    display: inline-block;
+}
+.warn_hot_icon{
+    @include icon_size();
+    background-image: url('../../assets/imgs/warning/hot.png');
+}
+.warn_normal_icon{
+    @include icon_size();
+    background-image: url('../../assets/imgs/warning/normal.png');
+}
+.warn_cool_icon{
+    @include icon_size();
+    background-image: url('../../assets/imgs/warning/cool.png');
+}
+// 预警弹框样式
+.xwmap-warning {
+    position: relative;
+    background: #fff;
+    // width:281px;
+    background:rgba(255,255,255,1);
+    // border:1px solid rgba(204,213,230,1);
+    // box-shadow:0px 3px 8px 0px rgba(36,47,59,0.08);
+    padding: 0px !important;
+    border-radius:4px;
+    padding-bottom: 0 ;
+    box-sizing: border-box;
+    .xwmap-header {
+        height: 52px;
+        padding: 0px 10px;
+        .cityName{
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .level_city{
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+            width: 69px;
+        }
+        // .bkc1{
+        //     background: #DE4C4D;
+        // }
+        // .bkc2{
+        //     background: #F2B94D;
+        // }
+        // .bkc3{
+        //     background: #96B92D;
+        // }
+        .bkc1{
+            background: #E50020;
+        }
+        .bkc2{
+            background: #F2754A;
+        }
+        .bkc3{
+            background: #F8B551;
+        }
+        .names {
+            display: inline-block;
+            font-size:18px;
+            vertical-align: bottom;
+            color: #333;
+        }
+        .times {
+            margin-left: 12px;
+            font-size:12px;
+            color: #666;
+        }
+    }
+    .dialog_infos{
+        display: flex;
+        flex-direction: column;
+        .item_wrap{
+            display: flex;
+            justify-content: space-between;
+            padding:0px 11px;
+            width:100%;
+            background:rgba(240,244,246,0.5);
+            li{
+                    cursor: pointer;
+                    font-size:14px;
+                    color:#fff;
+                    text-align:center;
+                    padding:0 2px;
+                    box-sizing:border-box;
+                    line-height:37px;
+                    color:#333;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;    
+                    box-sizing: content-box;          
+                }
+                .active{
+                    font-weight: bold;
+                    border-bottom: 1px solid #0F59A4;
+                }
+        }
+        .warning-content-box{
+            height: 338px;
+            padding:  0px 10px;
+        }
+        .category_list{
+            font-size:14px;
+            color:#333;
+            line-height:24px;
+            flex-wrap: wrap;
+            display: flex;
+            li{ 
+                width: 100%;
+                overflow:hidden;
+                margin-top:15px;
+                padding-left: 25px;
+                position: relative;
+                .text{
+                    float:left;
+                }
+                .num{
+                    float:right;
+                    // padding:0 15px;
+                    border-radius:24px;
+                    color:#333;
+                }
+                i {
+                    position: absolute;
+                    left:0;
+                    cursor: pointer;
+                }
+                .color1{
+                    //    background:#E50020;
+                    color:#E50020;
+                    &::before {
+                        content: "\e6e7";
+                        }
+                }
+                .color2{
+                    //    background:#F8B551;
+                    color:#3B9144;
+                    &::before {
+                        content: "\e636";
+                        }
+                }
+                .color3{
+                    // background:#36AF47;
+                    color:#00A0E9;
+                    &::before {
+                        content: "\e607";
+                        }
+                }
+                
+            }
+           
+        }
+        .continuousyWarn_list{
+            display: flex;
+            flex-wrap: wrap;
+            .item{
+                padding: 0 18px;
+                height: 40px;
+                line-height: 40px;
+                background: #FDF0F2;
+                border-radius: 4px;
+                margin: 15px 10px 0 0;
+            }
+        }
+        .waveWarn_list{
+            display: flex;
+            flex-wrap: wrap;
+            .item{
+                display: inline-block;
+                padding: 0 18px;
+                height: 40px;
+                line-height: 40px;
+                background: #FDF0F2;
+                border-radius: 4px;
+                margin-right: 10px;
+                max-width: 148px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin: 15px 10px 0 0;
+                &:nth-of-type(2n){
+                    margin-right: 0;
+                }
+            }
+        }
+        .color1{
+          background: #FDF0F2;
+        }
+        .color2{
+          background: rgba(250,182,70,0.1);
+        }
+        .color3{
+          background: #E1EDFA;
+        }
+        .extentWarn_list{
+            div{
+                display: inline-block;
+                padding: 0 18px;
+                height: 40px;
+                line-height: 40px;
+                background: #FDF0F2;
+                border-radius: 4px;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 15px;
+                    width: 50%;
+                    font-size: 14px;
+                    color:#666;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    i{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .no_data{
+            min-height: 338px;
+            overflow: hidden;
+            .pic{
+                width: 60px;
+                height: 70px;
+                background:  url('../imgs/nodata_pic.png') no-repeat;
+                margin: 100px auto 0;
+            }
+            .text{
+                font-size:14px;
+                color: #333;
+                text-align:center;
+                margin-top: 12px;
+            }
+        }
+        .hide{
+            display: none;
+        }
+        .content_show{
+        }
+        .color1{
+            color:#E50020;
+            
+        }
+        .color2{
+            color:#3B9144;
+            
+        }
+        .color3{
+            color:#00A0E9;
+            
+        }
+       .btn_wrap{
+            height: 57px;
+            padding: 0px 50px;
+            background:rgba(255,255,255,1);
+            box-shadow:0px 0px 8px 0px rgba(36,47,59,0.16);
+            border-radius:4px;
+            .btn{
+                width:126px;
+                height:30px;
+                font-size:12px;
+                border-radius:15px;
+                line-height:30px;
+                text-align:center;
+                display:inline-block;
+                cursor:pointer;
+                color:#fff;
+            }
+            .showFeedBack{
+                width:105px;
+                background:rgba(255,255,255,1);
+                border:1px solid rgba(210,213,216,1);
+                border-radius:15px;
+                color:#47516B;
+            }
+       }
+    }
+    .mores{
+        margin-top: 10px;
+        display: inline-block;
+        margin-left: 200px;
+        font-size:12px;
+        color: #00A0E9;
+        cursor: pointer;
+    }
+
+   .updown {
+        width:100px;
+        height:18px;
+        text-align: center;
+        background:rgba(240,244,246,1);
+        border-radius:4px 4px 0  0 ;
+        margin: 0 auto ;
+        font-size: 11px;
+        cursor: pointer;
+        position: relative;
+   }
+}
+.u-maptipbox:hover,.xwmap-warning-global:hover{
+    .closebtn{
+      display: inline-block;
+      // opacity: 1;
+      // z-index:99;
+      // transform: rotate(360deg);
+      transition: transform 1s;
+      transform: rotate(0deg);
+      &:hover{
+          transform: rotate(360deg);
+      }
+    }
+  }
+  .overflow_y{
+      overflow-y: auto;
+  }
+  .my_scroll{
+    //滚动条
+    *{
+        @extend .my_scroll;
+    }
+    &::-webkit-scrollbar
+    {
+        width: 4px;
+        height: 4px;
+        // background-color: #eee;
+        background-color: transparent;
+    }
+    //滚动块
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.3);
+        // background-color: #ddd;
+        background-color: transparent;
+    }
+    //滚动条的两边按钮
+    &::-webkit-scrollbar-button{
+        display: none;
+    }
+    //滚动条的外层轨道
+    &::-webkit-scrollbar-track{
+        display: none;
+    }
+    //滚动条的内层轨道，会覆盖外层轨道
+    &::-webkit-scrollbar-track-piece{
+        display: none;
+    }
+    //滚动条的两个边角
+    &::-webkit-scrollbar-corner{
+        display: none;
+    }
+    
+}
+.mt_20{
+    margin-top: 20px; 
+}
+//====start 时间线型列表 样式用于项目查询和政策资讯
+.timeline_list{
+    &.paddingWrap{
+        padding: 10px 15px 15px 15px;
+        box-sizing: border-box;
+    }
+    .listItem{
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        padding-left: 30px;
+        position: relative;
+        &:last-child{
+            &::before{
+                height: 0;
+            }
+        }
+        &::before{
+            content: '';
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: 20px;
+            left: 7px;
+            background: rgba(19,107,156, .5)
+        }
+        .head{
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+            width: 100%;
+            background: #1C2A39;
+            box-sizing: border-box;
+            border-radius: 2px;
+            position: relative;
+            padding: 0 15px;
+            color: white;
+            // &::before{
+            //     content: '';
+            //     position: absolute;
+            //     left: -7px;
+            //     top: 50%;
+            //     transform: translateY(-50%);
+            //     @include arrow(left, 7px, #C5CBD4);
+            // }
+            &::after{
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background-color: #136B9C;
+                background-clip: padding-box;
+                border: 3px solid rgba(19,107,156, .35);
+            }
+        }
+        .content_list_box{
+            padding-left: 14px;
+            padding-right: 24px;
+        }
+        .content_item{
+            padding: 20px 0px;
+            border-bottom: 1px solid rgba(197,208,222,.16);
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+    }
+    .listDetail{
+        padding: 10px 0;
+    }
+}
+// 时间线型列表 end====
+.hide{
+    display: none;
+}

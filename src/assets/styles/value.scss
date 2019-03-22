@@ -1,0 +1,83 @@
+/* 
+===基础配置变量===
+*/
+$color_object: #232C36; //主题色
+$color_logo_red: #C81428; //logo红
+$color_em_red: #D70825; //小字红
+$color_pink: #E57373; //粉红
+$color_white: #fff; //白色
+$color_border: #DEE4ED;/* 边框色*/
+$color_shahow: rgba(36,47,59,0.08);/* 阴影色*/
+
+
+/* 其它常用色 */
+$color_nav_bg:#101923; //nav 整个背景
+$color_nav_blue:#334C67; //nav 整个背景
+$color_nav_hover:#202B38; //nav 整个背景
+
+$color_blue: #509CEE; //蓝
+$color_Oblue: #00A0E9 ; //操作按钮蓝色
+$color_blue_light: #62A6F0; //浅蓝
+$color_blue_dark: #347DE6; //深蓝
+$color_grayblue: #417AA9; //灰蓝
+$color_grayblue_light: #5488B2; //浅灰蓝
+$color_grayblue_dark: #295A8C; //深灰蓝
+$color_violet: #6F86DA; //淡紫色
+$color_violet_light: #879be2; //浅灰蓝
+$color_violet_dark: #879be2; //深灰蓝
+$color_map_circle: #2DA8FA; //地图上圆圈
+
+/* 链接色 */
+$color_clickable: $color_grayblue;/* 可点击（出弹窗）、链接 */
+$color_oprate: $color_blue;/* 操作、链接 */
+
+/* 字体色 */
+$color_text: #333;/* 黑色标题 */
+$color_text_gray: #666;/* 正文字体色*/
+$color_desc: #999;/* 描述字体色*/
+$color_en: #7d7d7d;/* 禁用色*/
+$color_gray: #F0F3F8;/*背景灰*/
+$color_gray_light: #ccc;/*浅灰*/
+$color_gray_lighter: #eee;/*较浅灰*/
+$color_scroll: #DBDBDB;/*滚动条颜色*/
+$color_border: #E5E5E5;/*边框灰*/
+
+/* button背景色 */
+$btn_confirm: $color_grayblue;/* 确定按钮色 */
+$btn_confirm_hover: $color_grayblue_light;/* 确定按钮hover色 */
+$btn_confirm_active: $color_grayblue_dark;/* 确定按钮active色 */
+$btn_text: $color_blue;/* 内容按钮色 */
+$btn_text_hover: $color_blue_light;/* 内容按钮hover色 */
+$btn_text_active: $color_blue_dark;/* 内容按钮active色 */
+$btn_detail: $color_violet;/* 详情跳转按钮色 */
+$btn_detail_hover: $color_violet_light;/* 详情跳转hover色 */
+$btn_detail_active: $color_violet_dark;/* 详情跳转active色 */
+$btn_cancle: $color_white;/* 取消按钮色 */
+$btn_cancle_hover: #F9F9F9;/* 取消按钮hover色 */
+$btn_cancle_active: #DDDDDD;/* 取消按钮active色 */
+
+// 常用size
+$size_0:0px;
+$size_4:4px;
+$size_5:5px;
+$size_10:10px;
+$size_12:12px;
+$size_14:14px;
+$size_15:15px;
+$size_16:16px;
+$size_18:18px;
+$size_20:20px;
+$size_22:22px;
+$size_25:25px;
+$size_lg50:50%;
+$size_lg100:100%;
+
+// 字体大小
+$dimen_small: $size_12;/* 标题大小*/
+$dimen_text: $size_14;/* 正文字体大小*/
+$dimen_md: $size_16;/* 正文字体大小*/
+$dimen_title: $size_18;/* 标题大小*/
+$dimen_lg: $size_22;/* 标题大小*/
+
+
+

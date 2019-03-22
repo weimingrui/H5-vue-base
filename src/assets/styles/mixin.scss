@@ -1,0 +1,102 @@
+/* ===混合器=== */
+
+// 背景图
+@mixin bg_imgs($imgurl) {
+    background: url($imgurl+'.png') no-repeat;
+}
+  
+//  清除浮动
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
+    *height: 1%;
+}
+
+// 圆角
+@mixin border_radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//   阴影
+@mixin box_shadow($radius, $color) {
+    -webkit-box-shadow: $radius $color;
+    -moz-box-shadow: $radius $color;
+    box-shadow: $radius $color;
+}
+
+//单行文本溢出
+@mixin text_ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//多行文本溢出,$line 行数
+@mixin text_clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+//文字和背景色相同的label
+@mixin txt_bg_samecolor($color,$bgcolor:$color,$alpha:0.12) {
+    color:$color;
+    background-color: rgba($color: $bgcolor, $alpha: $alpha)
+}
+
+
+/* 箭头
+@include arrow(bottom,10px,#F00);//向下，10px大小，红色箭头
+*/
+@mixin arrow($direction, $size, $color) {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: $size;
+    cursor: pointer;
+    @if $direction == top {
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent $color transparent;
+        border-top: none;
+    } @else if $direction == bottom {
+        border-style: solid dashed dashed dashed;
+        border-color: $color transparent transparent transparent;
+        border-bottom: none;
+    } @else if $direction == right {
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent $color;
+        border-right: none;
+    } @else if $direction == left {
+        border-style: dashed solid dashed dashed;
+        border-color: transparent $color transparent transparent;
+        border-left: none;
+    }
+}
+@mixin blockBar($bgColor:#E17827){
+    position: relative;
+    padding: 0px 10px;
+    margin-left: -33px;
+    &::before{
+        position: absolute;
+        content: '';
+        bottom: -4px;
+        left: 50%;
+        width:0;
+        height:0;
+        border-width:4px 8px 0;
+        border-style:solid;
+        transform: translateX(-50%);
+        border-color:$bgColor transparent transparent;
+    }
+    background:$bgColor;
+}
